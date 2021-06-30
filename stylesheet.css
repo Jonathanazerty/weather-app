@@ -4,24 +4,61 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 body {
     background-image: url("background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Varela Round', sans-serif;   
-    color: white;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .container {
-    padding: 20px 70px;
+    padding: 50px 50px;
     position: relative;
     text-align: center;
     color: white;
 }
 
-.content {
+.container2{
+    padding: 50px 50px;
+    position: relative;
+    text-align: center;
+    color: white;
+    display: grid;
+    grid-template-columns: [left] 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr[right];
+    grid-template-areas:
+    "day2 day3 day4 day5";
+}
 
+button{
+    background-color: rgb(184, 221, 247);
+    font-size: medium;
+    color: rgb(36, 52, 138);
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 4px 4px 4px rgb(45, 115, 161);
+    border: none;
+
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
+input {
+    background-color: white;
+    font-size: medium;
+    color: rgb(67, 144, 196);
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 4px 4px 4px rgb(45, 115, 161);
+    border: none;
+    text-align: center;
 }
 
