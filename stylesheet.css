@@ -15,8 +15,8 @@ body {
 }
 
 .container {
-    margin: 20px 20px 20px 20px;
-    padding: 50px 50px 20px 50px;
+    margin: 25px 20px 20px 20px;
+    padding: 25px 50px 20px 50px;
     position: relative;
     text-align: center;
     color: white;
@@ -68,18 +68,18 @@ input {
 
 .place {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .date, .status {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .temperature {
     font-size: 40px;
     font-weight: 100;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* TODO: responsive and mobile friendly */

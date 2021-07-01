@@ -1,11 +1,11 @@
 
+let inputCity = document.querySelector(".inputCity");
+let button = document.querySelector(".button");
 
 let status = document.querySelector(".status");
 let place = document.querySelector(".place");
 let date = document.querySelector(".date");
 let temperature = document.querySelector(".temperature");
-let inputCity = document.querySelector(".inputCity");
-let button = document.querySelector(".button");
 
 let status2 = document.querySelector(".status2");
 let date2 = document.querySelector(".date2");
@@ -60,17 +60,33 @@ document.getElementById("submit").addEventListener("click", function(){
             let tempValue = weatherData["list"][0]["main"]["temp"];
             let statusValue = weatherData["list"][0]["weather"][0]["description"];
 
-            let today = new Date(weatherData["list"][0]["dt"]*1000);
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let months = ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            let today = new Date();
+            let month = today.getMonth();
+            let datee = today.getDate();
+            let day = today.getDay();
+            let year = today.getFullYear();
+
+            newdate = days[day] + ", " + datee+ " " + months[month] + " " + year;
+
             status.innerHTML = statusValue;
             place.innerHTML = cityValue + " 📍";
-            date.innerHTML = today;
-            temperature.innerHTML = "Average " + degrees + "°C 🌡️";
+            date.innerHTML = newdate;
+            temperature.innerHTML = degrees + "°C 🌡️";
             console.log(today);
             
 
             // TOMORROW
-            let tomorrow = new Date(weatherData["list"][5]["dt"]*1000);
+            let tomorrow = new Date();
+            tomorrow.setDate(today.getDate() + 1);
 
+            let month2 = tomorrow.getMonth();
+            let datee2 = tomorrow.getDate();
+            let day2 = tomorrow.getDay();
+            let year2 = tomorrow.getFullYear();
+
+            newdate2 = days[day2] + ", " + datee2+ " " + months[month2] + " " + year2;
             
             let statusValue2 = weatherData["list"][5]["weather"][0]["description"];
             let tempValue2 = weatherData["list"][5]["main"]["temp"];
@@ -78,16 +94,22 @@ document.getElementById("submit").addEventListener("click", function(){
             degrees2 = Math.round(tempValue2-273);
 
             status2.innerHTML = statusValue2;
-            date2.innerHTML = tomorrow;
-            temperature2.innerHTML = "Average " + degrees2 + "°C 🌡️";
-            //document.querySelector(".date2").innerHTML = tomorrow.setDate(today.getDate() + 1);
-            // document.querySelector(".status2").innerHTML = status2;
+            date2.innerHTML = newdate2;
+            temperature2.innerHTML = degrees2 + "°C 🌡️";
             console.log(tomorrow);
 
 
 
             // DAY 3
-            let day3 = new Date(weatherData["list"][13]["dt"]*1000);
+            let day3 = new Date();
+            day3.setDate(today.getDate() + 2);
+
+            let month3 = day3.getMonth();
+            let datee3 = day3.getDate();
+            let daythree = day3.getDay();
+            let year3 = day3.getFullYear();
+
+            newdate3 = days[daythree] + ", " + datee3+ " " + months[month3] + " " + year3;
 
             let statusValue3 = weatherData["list"][13]["weather"][0]["description"];
             let tempValue3 = weatherData["list"][13]["main"]["temp"];
@@ -95,15 +117,22 @@ document.getElementById("submit").addEventListener("click", function(){
             degrees3 = Math.round(tempValue3-273);
 
             status3.innerHTML = statusValue3;
-            date3.innerHTML = day3;
-            temperature3.innerHTML = "Average " + degrees3 + "°C 🌡️";
-            // document.querySelector(".status3").innerHTML = status3;
+            date3.innerHTML = newdate3;
+            temperature3.innerHTML = degrees3 + "°C 🌡️";
             console.log(day3);
 
 
 
             // DAY 4
-            let day4 = new Date(weatherData["list"][21]["dt"]*1000);
+            let day4 = new Date();
+            day4.setDate(today.getDate() + 3);
+
+            let month4 = day4.getMonth();
+            let datee4 = day4.getDate();
+            let dayfour = day4.getDay();
+            let year4 = day4.getFullYear();
+
+            newdate3 = days[dayfour] + ", " + datee4+ " " + months[month4] + " " + year4;
 
             let statusValue4 = weatherData["list"][21]["weather"][0]["description"];
             let tempValue4 = weatherData["list"][21]["main"]["temp"];
@@ -111,15 +140,22 @@ document.getElementById("submit").addEventListener("click", function(){
             degrees4 = Math.round(tempValue4-273);
 
             status4.innerHTML = statusValue4;
-            date4.innerHTML = day4;
-            temperature4.innerHTML = "Average " + degrees4 + "°C 🌡️";
-            // document.querySelector(".status4").innerHTML = status4;
+            date4.innerHTML = newdate3;
+            temperature4.innerHTML = degrees4 + "°C 🌡️";
             console.log(day4);
 
 
 
             // DAY 5
-            let day5 = new Date(weatherData["list"][29]["dt"]*1000);
+            let day5 = new Date();
+            day5.setDate(today.getDate() + 4);
+
+            let month5 = day5.getMonth();
+            let datee5 = day5.getDate();
+            let dayfive = day5.getDay();
+            let year5 = day5.getFullYear();
+
+            newdate3 = days[dayfive] + ", " + datee5+ " " + months[month5] + " " + year5;
 
             let statusValue5 = weatherData["list"][29]["weather"][0]["description"];
             let tempValue5 = weatherData["list"][29]["main"]["temp"];
@@ -127,9 +163,8 @@ document.getElementById("submit").addEventListener("click", function(){
             degrees5 = Math.round(tempValue5-273);
 
             status5.innerHTML = statusValue5;
-            date5.innerHTML = day5;
-            temperature5.innerHTML = "Average " + degrees5 + "°C 🌡️";
-            // document.querySelector(".status5").innerHTML = status5;
+            date5.innerHTML = newdate3;
+            temperature5.innerHTML = degrees5 + "°C 🌡️";
             console.log(day5);
 
                 }   
