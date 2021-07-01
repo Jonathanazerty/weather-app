@@ -7,6 +7,27 @@ let temperature = document.querySelector(".temperature");
 let inputCity = document.querySelector(".inputCity");
 let button = document.querySelector(".button");
 
+let status2 = document.querySelector(".status2");
+let date2 = document.querySelector(".date2");
+let place2 = document.querySelector(".place2");
+let temperature2 = document.querySelector(".temperature2");
+
+let status3 = document.querySelector(".status3");
+let date3 = document.querySelector(".date3");
+let place3 = document.querySelector(".place3");
+let temperature3 = document.querySelector(".temperature3");
+
+let status4 = document.querySelector(".status4");
+let date4 = document.querySelector(".date4");
+let place4 = document.querySelector(".place4");
+let temperature4 = document.querySelector(".temperature4");
+
+let status5 = document.querySelector(".status5");
+let date5 = document.querySelector(".date5");
+let place5 = document.querySelector(".place5");
+let temperature5 = document.querySelector(".temperature5");
+
+
 
 
 document.getElementById("submit").addEventListener("click", function(){
@@ -28,62 +49,86 @@ document.getElementById("submit").addEventListener("click", function(){
             let obj = weatherData["list"][i];
             average += weatherData["list"][i]["main"]["temp"];
             
-            console.log(obj);
-            
             }
-
+            
             // average temperature to degrees celcius
             average = average / weatherData["list"].length;
             degrees = Math.round(average-273);
-            console.log({degrees});
 
-            // get data from json
+            // TODAY
             let cityValue = weatherData["city"]["name"];
             let tempValue = weatherData["list"][0]["main"]["temp"];
             let statusValue = weatherData["list"][0]["weather"][0]["description"];
-            console.log(tempValue);
 
-            // today
             let today = new Date(weatherData["list"][0]["dt"]*1000);
             status.innerHTML = statusValue;
             place.innerHTML = cityValue + " 📍";
             date.innerHTML = today;
-            temperature.innerHTML = degrees + "°C 🌡️";
+            temperature.innerHTML = "Average " + degrees + "°C 🌡️";
             console.log(today);
             
-            // obj["clouds"]["dt_txt"] = today;
 
-            // TODO: click submit weather for the next 5 days
+            // TOMORROW
+            let tomorrow = new Date(weatherData["list"][5]["dt"]*1000);
 
-            // tomorrow
-            let tomorrow = new Date(weatherData["list"][0]["dt"]*1000);
-            tomorrow.setDate(today.getDate() + 1);
+            
+            let statusValue2 = weatherData["list"][5]["weather"][0]["description"];
+            let tempValue2 = weatherData["list"][5]["main"]["temp"];
+
+            degrees2 = Math.round(tempValue2-273);
+
+            status2.innerHTML = statusValue2;
+            date2.innerHTML = tomorrow;
+            temperature2.innerHTML = "Average " + degrees2 + "°C 🌡️";
             //document.querySelector(".date2").innerHTML = tomorrow.setDate(today.getDate() + 1);
             // document.querySelector(".status2").innerHTML = status2;
             console.log(tomorrow);
 
 
 
-            // day3
-            let day3 = new Date(weatherData["list"][0]["dt"]*1000);
-            day3.setDate(today.getDate() + 2);
-            document.querySelector(".date3")
+            // DAY 3
+            let day3 = new Date(weatherData["list"][13]["dt"]*1000);
+
+            let statusValue3 = weatherData["list"][13]["weather"][0]["description"];
+            let tempValue3 = weatherData["list"][13]["main"]["temp"];
+
+            degrees3 = Math.round(tempValue3-273);
+
+            status3.innerHTML = statusValue3;
+            date3.innerHTML = day3;
+            temperature3.innerHTML = "Average " + degrees3 + "°C 🌡️";
             // document.querySelector(".status3").innerHTML = status3;
             console.log(day3);
 
 
 
-            // day4
-            let day4 = new Date(weatherData["list"][0]["dt"]*1000);
-            day4.setDate(today.getDate() + 3);
+            // DAY 4
+            let day4 = new Date(weatherData["list"][21]["dt"]*1000);
+
+            let statusValue4 = weatherData["list"][21]["weather"][0]["description"];
+            let tempValue4 = weatherData["list"][21]["main"]["temp"];
+
+            degrees4 = Math.round(tempValue4-273);
+
+            status4.innerHTML = statusValue4;
+            date4.innerHTML = day4;
+            temperature4.innerHTML = "Average " + degrees4 + "°C 🌡️";
             // document.querySelector(".status4").innerHTML = status4;
             console.log(day4);
 
 
 
-            // day5
-            let day5 = new Date(weatherData["list"][0]["dt"]*1000);
-            day5.setDate(today.getDate() + 4);
+            // DAY 5
+            let day5 = new Date(weatherData["list"][29]["dt"]*1000);
+
+            let statusValue5 = weatherData["list"][29]["weather"][0]["description"];
+            let tempValue5 = weatherData["list"][29]["main"]["temp"];
+
+            degrees5 = Math.round(tempValue5-273);
+
+            status5.innerHTML = statusValue5;
+            date5.innerHTML = day5;
+            temperature5.innerHTML = "Average " + degrees5 + "°C 🌡️";
             // document.querySelector(".status5").innerHTML = status5;
             console.log(day5);
 
