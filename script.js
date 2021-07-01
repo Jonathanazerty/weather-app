@@ -60,6 +60,11 @@ document.getElementById("submit").addEventListener("click", function(){
             let tempValue = weatherData["list"][0]["main"]["temp"];
             let statusValue = weatherData["list"][0]["weather"][0]["description"];
 
+            //ICON - today
+            let icon = weatherData["list"][0]["weather"][0]["icon"];
+            let img = document.querySelector(".weatherIcon");
+            img.setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`);
+
             let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             let months = ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
             let today = new Date();
@@ -87,6 +92,11 @@ document.getElementById("submit").addEventListener("click", function(){
             let year2 = tomorrow.getFullYear();
 
             newdate2 = days[day2] + ", " + datee2+ " " + months[month2] + " " + year2;
+
+            //ICON - day 2
+            let icon2 = weatherData["list"][5]["weather"][0]["icon"];
+            let img2 = document.querySelector(".weatherIcon2");
+            img2.setAttribute('src', `http://openweathermap.org/img/wn/${icon2}@2x.png`);
             
             let statusValue2 = weatherData["list"][5]["weather"][0]["description"];
             let tempValue2 = weatherData["list"][5]["main"]["temp"];
@@ -111,6 +121,11 @@ document.getElementById("submit").addEventListener("click", function(){
 
             newdate3 = days[daythree] + ", " + datee3+ " " + months[month3] + " " + year3;
 
+            //ICON - day 3
+            let icon3 = weatherData["list"][13]["weather"][0]["icon"];
+            let img3 = document.querySelector(".weatherIcon3");
+            img3.setAttribute('src', `http://openweathermap.org/img/wn/${icon3}@2x.png`);
+
             let statusValue3 = weatherData["list"][13]["weather"][0]["description"];
             let tempValue3 = weatherData["list"][13]["main"]["temp"];
 
@@ -133,6 +148,11 @@ document.getElementById("submit").addEventListener("click", function(){
             let year4 = day4.getFullYear();
 
             newdate3 = days[dayfour] + ", " + datee4+ " " + months[month4] + " " + year4;
+
+            //ICON - day 4
+            let icon4 = weatherData["list"][21]["weather"][0]["icon"];
+            let img4 = document.querySelector(".weatherIcon4");
+            img4.setAttribute('src', `http://openweathermap.org/img/wn/${icon4}@2x.png`);
 
             let statusValue4 = weatherData["list"][21]["weather"][0]["description"];
             let tempValue4 = weatherData["list"][21]["main"]["temp"];
@@ -157,6 +177,11 @@ document.getElementById("submit").addEventListener("click", function(){
 
             newdate3 = days[dayfive] + ", " + datee5+ " " + months[month5] + " " + year5;
 
+            //ICON - day 5
+            let icon5 = weatherData["list"][29]["weather"][0]["icon"];
+            let img5 = document.querySelector(".weatherIcon5");
+            img5.setAttribute('src', `http://openweathermap.org/img/wn/${icon5}@2x.png`);
+
             let statusValue5 = weatherData["list"][29]["weather"][0]["description"];
             let tempValue5 = weatherData["list"][29]["main"]["temp"];
 
@@ -170,7 +195,6 @@ document.getElementById("submit").addEventListener("click", function(){
                 }   
             }
 
-        // document.getElementById(temperature).innerHTML = "Currently" + (weather.temperature);
 
         
         catch(error){
@@ -178,19 +202,9 @@ document.getElementById("submit").addEventListener("click", function(){
             console.log(error);
             }
 
-        // TODO : setIcons(icon, document.querySelector(".icon"));
     }
 
     weatherAllData();
 });
 
-
-    /* TODO: icon 
-    function setIcons(icon, iconID) {
-        let skycons = new Skycons({"color": "black"});
-        let currentIcon = icon.replace(/-/g, "_").toUpperCase();
-        skycons.play();
-        return skycons.set(iconID, Skycons[currentIcon]);
-    }
-*/
 

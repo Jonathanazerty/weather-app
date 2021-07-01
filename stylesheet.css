@@ -14,22 +14,41 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
-.container {
+.container1 {
     margin: 25px 20px 20px 20px;
     padding: 25px 50px 20px 50px;
     position: relative;
     text-align: center;
     color: white;
+    display: grid;
+    background-color: rgb(31, 79, 212, 0.4);
+    border-radius: 10px;
 }
 
-.container2{
-    margin: 20px 20px 20px 20px;
-    padding: 20px 50px 50px 50px;
+.container2 {
+    margin: 25px 20px 20px 20px;
+    padding: 25px 50px 20px 50px;
     position: relative;
     text-align: center;
     color: white;
     display: grid;
-    grid-template-columns: [left] 0.2fr 0.2fr 0.2fr 0.2fr[right];
+    background-color: rgb(31, 79, 212, 0.4);
+    border-radius: 10px;
+    grid-template-columns: [left] 0.5fr 1.4fr[right];
+    grid-template-areas:
+    "icon content";
+}
+
+.container3 {
+    margin: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+    text-align: center;
+    color: white;
+    display: grid;
+    background-color: rgb(31, 79, 212, 0.4);
+    border-radius: 10px;
+    grid-template-columns: [left] 1fr 1fr 1fr 1fr[right];
     grid-template-areas:
     "day2 day3 day4 day5";
 }
@@ -82,4 +101,50 @@ input {
     margin-bottom: 10px;
 }
 
-/* TODO: responsive and mobile friendly */
+@media only screen and (max-width:500px){
+
+    .container2 {
+        display: grid;
+        grid-template-columns: [left] 0.5fr[right];
+        grid-template-rows: 0.5fr 0.5fr 0.5fr ;
+        grid-template-areas:
+        "icon"
+        "info"
+        "searchCity";
+    }
+
+    .container3 {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: [left] 0.5fr[right];
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas:
+        "tomorrow"
+        "day3"
+        "day4"
+        "day5";
+    }
+
+}
+
+@media only screen and (max-width:750px){
+
+    .container2 {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: [left] 0.5fr[right];
+        grid-template-rows: 0.5fr 0.5fr 0.5fr ;
+        grid-template-areas:
+        "icon"
+        "info"
+        "searchCity";
+    }
+}
+
+@media only screen and (max-width:800px){
+
+    .container3 {
+        justify-content: center;
+        display: grid;
+    }
+}
